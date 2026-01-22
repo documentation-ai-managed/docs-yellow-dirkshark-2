@@ -1,0 +1,145 @@
+---
+title: Changelog
+description: Track the latest updates and improvements to Yellow DirkShark, including new features and bug fixes.
+---
+
+## Stay Up to Date
+
+Yellow DirkShark releases new versions regularly to enhance your experience building and sharing LEGO projects. You receive automatic notifications through the dashboard or GitHub releases. Review changes below to understand impacts on your projects, collections, and integrations.
+
+<Callout kind="info">
+  Subscribe to the [GitHub releases page](https://github.com/dirshark/yellow-dirshark/releases) or our RSS feed at `https://dirshark.com/rss/changelog.xml` to stay informed about new LEGO project tools and library updates.
+</Callout>
+
+## Upgrade to the Latest Version
+
+Follow these steps to update your Yellow DirkShark SDK or CLI integration. Always back up your local collections before upgrading.
+
+<Steps>
+  <Step title="Check Your Current Version" icon="package">
+    Run the version check command in your terminal.
+
+````bash
+npx @yellow-dirshark/cli version
+````
+
+    This outputs your installed version, such as `v1.2.0`.
+  </Step>
+
+  <Step title="Update the SDK" icon="download">
+    Use your package manager to install the latest version.
+
+    <CodeGroup tabs="npm,yarn,pnpm">
+````bash
+npm install @yellow-dirshark/sdk@latest
+````
+````bash
+yarn add @yellow-dirshark/sdk@latest
+````
+````bash
+pnpm add @yellow-dirshark/sdk@latest
+````
+    </CodeGroup>
+
+    Verify the update:
+
+````bash
+npx @yellow-dirshark/cli version
+````
+  </Step>
+
+  <Step title="Test Your Projects" icon="play">
+    Rebuild a test project to ensure compatibility.
+
+    ```javascript
+    import { buildProject } from '@yellow-dirshark/sdk';
+
+    const project = await buildProject({
+      pieces: ['3024', '4070'], // Example piece IDs
+      instructions: true
+    });
+    console.log(project.modelUrl);
+    ```
+  </Step>
+</Steps>
+
+## Quick Links
+
+<Columns cols={3}>
+  <Card title="GitHub Releases" icon="github" href="https://github.com/dirshark/yellow-dirshark/releases">
+    Full release notes and downloads.
+  </Card>
+  <Card title="API Reference" icon="code" href="/authentication">
+    Updated endpoints and SDK methods.
+  </Card>
+  <Card title="Report Issues" icon="alert-triangle" href="https://github.com/dirshark/yellow-dirshark/issues/new">
+    Help us improve LEGO project tools.
+  </Card>
+</Columns>
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v1.3.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added advanced project creation tools: You now drag-and-drop pieces from your collection directly into the builder canvas.
+- Introduced 3D preview rendering for custom models before finalizing instructions.
+
+## Improvements
+
+- Enhanced library search with filters for piece color, rarity, and set compatibility.
+- Optimized sharing workflows: Generate public links with one click, including embedded 3D viewers.
+
+## Bug Fixes
+
+- Resolved issues with large collection imports exceeding `<1000` pieces.
+- Fixed validation errors when using unofficial MOC (My Own Creation) designs.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Library search now supports semantic queries like "spaceship with wings" to find matching designs.
+- Added sharing calendars: Schedule project releases and collaborate with build teams.
+
+## Improvements
+
+- Faster search indexing for user-generated content, reducing load times by `>50%`.
+
+## Bug Fixes
+
+- Corrected sharing permission bugs where private projects leaked to public feeds.
+- Patched CLI export errors for PDF instructions on Windows systems.
+
+  Example fix in SDK:
+
+````javascript
+// Before (v1.1.x) - prone to errors
+exportInstructions(projectId, { format: 'pdf' });
+
+// After (v1.2.0+) - robust
+await sdk.exportInstructions(projectId, { format: 'pdf', validate: true });
+````
+
+</Update>
+
+<Update label="2024-08-10" description="v1.1.0" tags={["improvement", "bugfix"]}>
+
+## Improvements
+
+- Upgraded project creation tools with auto-suggest for compatible bricks based on your inventory.
+- Refined sharing capabilities: Bulk export multiple designs as ZIP archives with parts lists.
+
+## Bug Fixes
+
+- Fixed search crashes on rare piece queries involving special characters.
+- Resolved dashboard sync issues after adding new LEGO sets to collections.
+
+</Update>
+
+<Callout kind="tip">
+  For full details on older releases, check the [complete changelog on GitHub](https://github.com/dirshark/yellow-dirshark/releases?after=v1.1.0). Upgrade now to access the latest LEGO building innovations.
+</Callout>

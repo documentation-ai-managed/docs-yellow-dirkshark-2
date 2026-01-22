@@ -1,0 +1,147 @@
+---
+title: Getting Started with Yellow DirkShark
+description: Set up your account and take your first steps to browse and build LEGO projects in minutes.
+---
+
+## Prerequisites
+
+Before you begin, ensure you have the following:
+
+<Callout kind="info">
+
+- A modern web browser like Chrome, Firefox, or Safari
+- An email address for account verification
+- Optional: A list of your LEGO pieces for inventory setup
+
+</Callout>
+
+Yellow DirkShark makes it easy to discover and build LEGO projects using your collection. Follow these steps to get started in under 5 minutes.
+
+## Create and Verify Your Account
+
+Sign up quickly to access the library of user-generated designs.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="monitor">
+    Navigate to `https://dashboard.example.com` and click **Sign Up**.
+
+    Enter your email, create a password, and choose a username.
+  </Step>
+  <Step title="Verify Your Email" icon="mail">
+    Check your inbox for a verification email from Yellow DirkShark.
+
+    Click the verification link to activate your account.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Return to the dashboard and log in with your credentials.
+
+    You'll land on the main library page.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Save your credentials securely. Use a password manager for best security.
+</Callout>
+
+## Browse the Library
+
+Explore thousands of custom LEGO designs shared by the community. Filter by theme, difficulty, or piece count.
+
+<Tabs>
+  <Tab title="Web Browser" icon="globe">
+    On the dashboard:
+
+    1. Use the search bar to find designs like "Classic Spaceship".
+    2. Browse categories such as `Star Wars` or `City`.
+    3. Click a design to view instructions and piece lists.
+
+    Designs show compatibility with your inventory (once added).
+  </Tab>
+  <Tab title="Mobile App" icon="smartphone">
+    Download the Yellow DirkShark app from your app store.
+
+    1. Log in and tap **Library**.
+    2. Swipe through featured projects.
+    3. Tap **Build Now** to check against your collection.
+  </Tab>
+</Tabs>
+
+## Build Your First Model
+
+Build a simple model like a "Mini Castle" using your inventory.
+
+First, add your collection:
+
+<Steps>
+  <Step title="Add Inventory" icon="package">
+    Go to **My Collection** > **Add Pieces**.
+
+    Search and add items like:
+    
+    | Part Name          | Quantity |
+    |--------------------|----------|
+    | 2x4 Brick Red      | 10       |
+    | 1x1 Plate Black    | 20       |
+    | Slope 45° Yellow   | 5        |
+
+    Or upload a CSV file with your pieces.
+  </Step>
+  <Step title="Select a Design" icon="search">
+    Return to the library and search for "Mini Castle".
+
+    Click **Build** to see which pieces you have.
+  </Step>
+  <Step title="Follow Instructions" icon="book-open">
+    Step-by-step images guide assembly.
+
+    Mark pieces as used to track progress.
+  </Step>
+</Steps>
+
+For advanced users, query designs via API:
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  const response = await fetch('https://api.example.com/v1/designs?query=castle&limit=10', {
+    headers: { Authorization: `Bearer YOUR_API_KEY` }
+  });
+  const designs = await response.json();
+  console.log(designs);
+  ```
+  ```python
+  import requests
+  response = requests.get(
+      'https://api.example.com/v1/designs',
+      params={'query': 'castle', 'limit': 10},
+      headers={'Authorization': 'Bearer YOUR_API_KEY'}
+  )
+  designs = response.json()
+  print(designs)
+  ```
+</CodeGroup>
+
+<ParamField path="query" param-type="string" required="true">
+  Search term for designs, e.g., "castle".
+</ParamField>
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Bearer token obtained after login.
+</ParamField>
+
+## Next Steps
+
+Dive deeper into Yellow DirkShark features.
+
+<Columns cols={3}>
+  <Card title="Full Library Guide" icon="book" href="/introduction">
+    Explore all categories and filters.
+  </Card>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Set up API access for automation.
+  </Card>
+  <Card title="Advanced Building" icon="rocket" href="/quickstart#build">
+    Tips for complex models.
+  </Card>
+</Columns>
+
+You're now ready to build! Check the [changelog](/changelog) for the latest updates.

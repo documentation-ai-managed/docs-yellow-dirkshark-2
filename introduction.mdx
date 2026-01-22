@@ -1,0 +1,108 @@
+---
+title: Introduction to Yellow DirkShark
+description: Discover Yellow DirkShark, a platform for exploring, building, and sharing custom LEGO projects using your existing collections and a rich library of user-generated designs.
+---
+
+## Overview
+
+Yellow DirkShark empowers you to discover, create, and share LEGO projects using pieces from your existing collections. Browse thousands of user-generated designs, build custom models virtually, and access step-by-step instructions without buying new bricks. Unlock creativity with a vast library of MOCs (My Own Creations) and inventory tools that track your LEGO parts.
+
+<Callout kind="info">
+Yellow DirkShark connects your physical collection to digital designs, saving time and inspiring endless builds.
+</Callout>
+
+## Key Features
+
+Explore the core capabilities that make Yellow DirkShark essential for LEGO enthusiasts.
+
+<Columns cols={3}>
+  <Card title="Discovery" icon="search" href="#discovery">
+    Search millions of parts and models. Filter by theme, year, or your collection to find perfect matches.
+  </Card>
+
+  <Card title="Creation" icon="edit-3" href="#creation">
+    Build custom designs with drag-and-drop tools. Visualize assemblies and generate building instructions.
+  </Card>
+
+  <Card title="Sharing" icon="share-2" href="#sharing">
+    Upload your MOCs, share inventories, and collaborate. Join communities for feedback and inspiration.
+  </Card>
+</Columns>
+
+## Quick Start
+
+Get building in under 5 minutes. Follow these steps to dive into your first project.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Create a free account at https://app.yellowdirkshark.com/register.
+
+    Add your LEGO collection by scanning barcodes or importing CSV files.
+  </Step>
+
+  <Step title="Browse Designs" icon="search">
+    Use the search bar to find models by theme, like `Star Wars` or `Castle`.
+
+    Check compatibility with your inventory before downloading.
+  </Step>
+
+  <Step title="Build and Share" icon="share-2">
+    Open a design, customize parts, and export PDF instructions.
+
+    Publish your modified version to the community library.
+  </Step>
+</Steps>
+
+## Integrate with Your Apps
+
+Fetch projects programmatically to embed Yellow DirkShark in your tools.
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  const response = await fetch('https://api.example.com/v1/projects?theme=Star%20Wars&limit=10', {
+    headers: {
+      'Authorization': `Bearer ${YOUR_API_KEY}`
+    }
+  });
+  const projects = await response.json();
+  console.log(projects);
+  ```
+
+  ```python
+  import requests
+
+  response = requests.get(
+      'https://api.example.com/v1/projects',
+      params={'theme': 'Star Wars', 'limit': 10},
+      headers={'Authorization': f'Bearer {YOUR_API_KEY}'}
+  )
+  projects = response.json()
+  print(projects)
+  ```
+</CodeGroup>
+
+<Callout kind="tip">
+Replace `{YOUR_API_KEY}` with your actual key from the dashboard. Start with the <ParamField path="theme" param-type="string" required="false">query parameter to filter designs.</ParamField>
+</Callout>
+
+## Next Steps
+
+Ready to go deeper?
+
+<Columns cols={2}>
+  <Card title="Quickstart Guide" icon="book-open" href="/quickstart">
+    Detailed setup for collections and first builds.
+  </Card>
+
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your API access and manage tokens.
+  </Card>
+</Columns>
+
+<Expandable title="Why Choose Yellow DirkShark?" default-open="false">
+  - **Collection Sync**: Track 100,000+ part numbers automatically.
+  - **Mobile-First**: Build on any device with offline support.
+  - **Community-Driven**: 500,000+ designs updated daily.
+
+  Join 1M+ builders transforming their LEGO hobby.
+</Expandable>
